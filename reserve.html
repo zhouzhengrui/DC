@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>会议室预定</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="icofont/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- JS -->
+    <script type="text/javascript" src="js/system.js"></script>
+
+</head>
+
+<body>
+    <!-- main start -->
+    <div class="main main-gray nprogress-fade nprogress-out">
+        <div class="scroller">
+            <!-- date start -->
+            <div class="section-date">
+                <!-- year start -->
+                <label class="item hairline">
+                    <select dir="rtl">
+                        <option value="" selected>2019</option>
+                        <option value="">2020</option>
+                        <option value="">2021</option>
+                    </select>
+                    <p>年</p>
+                    <i class="icon-arrow-down"></i>
+                </label>
+                <!-- year over -->
+                <!-- month start -->
+                <label class="item hairline">
+                    <select dir="rtl">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="" selected>5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                    </select>
+                    <p>月</p>
+                    <i class="icon-arrow-down"></i>
+                </label>
+                <!-- month over -->
+                <!-- day start -->
+                <label class="item hairline">
+                    <select dir="rtl">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="" selected>23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30</option>
+                        <option value="">31</option>
+                    </select>
+                    <p>日</p>
+                    <i class="icon-arrow-down"></i>
+                </label>
+                <!-- day over -->
+            </div>
+            <!-- date over -->
+            <!-- room start -->
+            <div class="section-room">
+                <label class="item">
+                    <select>
+                        <option value="" selected>1号会议室</option>
+                        <option value="">2号会议室</option>
+                        <option value="">3号会议室</option>
+                    </select>
+                    <div class="info">
+                        <h3>1号会议室</h3>
+                        <p>可容纳6人, 会议室其他功能简介</p>
+                    </div>
+                    <i class="icon-arrow-down"></i>
+                </label>
+            </div>
+            <!-- room over -->
+            <!-- time start -->
+            <div class="section-time">
+                <h5 class="section-time-title">时间段选择</h5>
+                <form class="checkbox-time">
+                    <!-- 样式：每组内选中的.checkbox，第一个追加.checked-first，最后一个追加.checked-last，中间过渡追加.checked-transit -->
+                    <!-- group start -->
+                    <div class="checkbox-time-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox checked-first" checked>
+                            <span class="checkbox-replace"></span>
+                            <p>8:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox checked-transit" checked>
+                            <span class="checkbox-replace"></span>
+                            <p>9:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox checked-transit" checked>
+                            <span class="checkbox-replace"></span>
+                            <p>9:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox"class="checkbox checked-last" checked>
+                            <span class="checkbox-replace"></span>
+                            <p>10:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>10:30</p>
+                        </label>
+                    </div>
+                    <!-- group over -->
+                    <!-- group start -->
+                    <div class="checkbox-time-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>11:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>11:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox"class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>12:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>12:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox" disabled>
+                            <span class="checkbox-replace"></span>
+                            <p>13:00</p>
+                        </label>
+                    </div>
+                    <!-- group over -->
+                    <!-- group start -->
+                    <div class="checkbox-time-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox disabled-first" disabled>
+                            <span class="checkbox-replace"></span>
+                            <p>13:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox"class="checkbox disabled-transit" disabled>
+                            <span class="checkbox-replace"></span>
+                            <p>14:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox disabled-last" disabled>
+                            <span class="checkbox-replace"></span>
+                            <p>14:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>15:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>15:30</p>
+                        </label>
+                    </div>
+                    <!-- group over -->
+                    <!-- group start -->
+                    <div class="checkbox-time-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox"class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>16:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>16:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>17:00</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>17:30</p>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" class="checkbox">
+                            <span class="checkbox-replace"></span>
+                            <p>18:00</p>
+                        </label>
+                    </div>
+                    <!-- group over -->
+                </form>
+            </div>
+            <!-- time over -->
+            <!-- order start -->
+            <div class="section-order">
+                <h5 class="section-order-title">订单信息</h5>
+                <div class="order-info">
+                    <div class="item hairline">
+                        <p class="name">时间段</p>
+                        <p class="info">10:00 - 12:30</p>
+                    </div>
+                    <div class="item hairline">
+                        <p class="name">合计金额</p>
+                        <p class="info">￥580</p>
+                    </div>
+                    <div class="item hairline">
+                        <p class="name">账户余额</p>
+                        <!-- 余额不足时红字显示 -->
+                        <p class="info red">￥100</p>
+                    </div>
+                    <div class="item hairline">
+                        <p class="name">会议人数</p>
+                        <input type="tel" class="info-input" placeholder="请输入会议人数">
+                    </div>
+                </div>
+            </div>
+            <!-- order over -->
+            <!-- button start -->
+            <div class="button-group">
+                <button type="button" class="button button-block waves-effect waves-light" data-href="reserve-finish.html">
+                    <span class="button-inner"><b>提交订单</b></span>
+                </button>
+            </div>
+            <!-- button over -->
+        </div>
+    </div>
+    <!-- main over -->
+
+    <!-- JavaScript start -->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/nprogress/nprogress.js"></script>
+    <script type="text/javascript" src="js/iscroll/iscroll-probe.js"></script>
+    <script type="text/javascript" src="js/waves/waves.min.js"></script>
+    <script type="text/javascript" src="js/modalEffects/classie.js"></script>
+    <script type="text/javascript" src="js/modalEffects/modalEffects.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!-- JavaScript over -->
+
+    <script type="text/javascript">
+        // nprogress
+        NProgress.start();
+        $(window).load(function() {
+            NProgress.done();
+            $('.nprogress-fade').removeClass('nprogress-out');
+        })
+        // 修复ios下微信7.0键盘收起后Webview底部异常的问题
+        var ua = navigator.userAgent.toLowerCase();
+        if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) && ua.match(/MicroMessenger/i)=="micromessenger") {
+            $(document).delegate('input, textarea', 'blur', function() {
+                setTimeout(function() {
+                    $('html').animate({
+                        height: '100.1vh'
+                    }, 100, function() {
+                        $(this).animate({
+                            height: '100vh'
+                        }, 1);
+                    });
+                }, 100);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
