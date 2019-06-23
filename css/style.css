@@ -1554,6 +1554,7 @@ span.label-translucent {
 }
 
 .content p {
+  font-size: 14px;
   margin: 15px 0;
   line-height: 1.8;
 }
@@ -3005,6 +3006,19 @@ span.label-translucent {
   color: #aaaaaa;
 }
 
+.modal-content-scroll {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  height: 75vh;
+  padding: 0;
+  background-color: #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
 .modal-bottom-info {
   padding: 15px;
   border-top: 1px solid #e5e5e5;
@@ -3060,7 +3074,7 @@ span.label-translucent {
 
 .section-date {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -3093,7 +3107,7 @@ span.label-translucent {
 
 .section-room {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   background-color: #FFFFFF;
   box-shadow: 0 4px 8px #e5e5e5;
   position: relative;

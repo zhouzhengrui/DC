@@ -21,6 +21,15 @@
     <!-- main start -->
     <div class="main main-gray nprogress-fade nprogress-out">
         <div class="scroller">
+            <!-- room start -->
+            <div class="section-room md-trigger" data-modal="modal-1">
+                <div class="info">
+                    <h3>1号会议室</h3>
+                    <p>可容纳6人, 会议室其他功能简介...</p>
+                </div>
+                <i class="icon-go"></i>
+            </div>
+            <!-- room over -->
             <!-- date start -->
             <label class="section-date">
                 <p class="section-date-title">预约日期</p>
@@ -28,15 +37,6 @@
                 <i class="icon-arrow-down"></i>
             </label>
             <!-- date over -->
-            <!-- room start -->
-            <a class="section-room" href="room-content.html">
-                <div class="info">
-                    <h3>1号会议室</h3>
-                    <p>可容纳6人, 会议室其他功能简介...</p>
-                </div>
-                <i class="icon-go"></i>
-            </a>
-            <!-- room over -->
             <!-- time start -->
             <div class="section-time">
                 <h5 class="section-time-title">时间段选择</h5>
@@ -196,6 +196,50 @@
     </div>
     <!-- main over -->
 
+    <!-- modal start -->
+    <div class="md-modal md-effect-fade" id="modal-1">
+        <div class="md-main">
+            <div class="modal-title hairline">
+                <h4 class="title">详细信息</h4>
+                <button class="md-close"><i class="icon-cancel"></i></button>
+            </div>
+            <div class="modal-content-scroll">
+                <div class="scroller">
+                    <!-- content start -->
+                    <div class="modal-content">
+                        <div class="content">
+                            <h1>h1.标题样式</h1>
+                            <h2>h2.标题样式</h2>
+                            <h3>h3.标题样式</h3>
+                            <h4>h4.标题样式</h4>
+                            <h5>h5.标题样式</h5>
+                            <h6>h6.标题样式</h6>
+                            <p>段落.马鞍山市志业软件科技有限公司为您提供网站建设推广、网站运营维护、软件定制开发、域名注册、虚拟主机、企业VI设计、APP应用开发、移动网站设计开发等多种信息产品和服务。</p>
+                            <p>段落.资深的网络营销顾问、强大的调研队伍、专业的WEB美工设计、优秀的数据库及程序开发、敬业的客户服务经理等专业团队，以及多年来对互联网络的持续深入研究、对各行业客户的理解、对项目的整体策划控制、对国际化标准和流行趋势的掌握、对客户形象的视觉传递、对应用系统的完美结合等，我们能快速的为企、事业单位提供一站式顾问服务。</p>
+                            <img src="http://img.la/374x374" alt="">
+                            <ul>
+                                <li>ul无序列表.我们是一流品牌首选的互联网综合服务提供者</li>
+                                <li>ul无序列表.我们坚信，优秀的产品是优雅设计与精湛技术的完美结合</li>
+                                <li>ul无序列表.努力与真诚，坚持与梦想</li>
+                            </ul>
+                            <ol>
+                                <li>ol有序列表.我们是一流品牌首选的互联网综合服务提供者</li>
+                                <li>ol有序列表.我们坚信，优秀的产品是优雅设计与精湛技术的完美结合</li>
+                                <li>ol有序列表.努力与真诚，坚持与梦想</li>
+                            </ol>
+                            <blockquote>
+                                <p>blockquote.块引用</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <!-- content over -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay"></div>
+    <!-- modal over -->
+
     <!-- JavaScript start -->
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/nprogress/nprogress.js"></script>
@@ -216,6 +260,14 @@
     <script type="text/javascript" src="js/mobiscroll/i18n/mobiscroll.i18n.zh.js"></script>
 
     <script type="text/javascript">
+        // modal scroll
+        var modalContentScroll;
+        modalContentScroll = new IScroll('.modal-content-scroll', {
+            scrollbars: 'custom',
+            fadeScrollbars: true,
+            shrinkScrollbars: 'scale',
+            click: true
+        });
         // nprogress
         NProgress.start();
         $(window).load(function() {
