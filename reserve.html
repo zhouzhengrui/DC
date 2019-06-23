@@ -16,83 +16,17 @@
 
 </head>
 
+
 <body>
     <!-- main start -->
     <div class="main main-gray nprogress-fade nprogress-out">
         <div class="scroller">
             <!-- date start -->
-            <div class="section-date">
-                <!-- year start -->
-                <label class="item hairline">
-                    <select dir="rtl">
-                        <option value="" selected>2019</option>
-                        <option value="">2020</option>
-                        <option value="">2021</option>
-                    </select>
-                    <p>年</p>
-                    <i class="icon-arrow-down"></i>
-                </label>
-                <!-- year over -->
-                <!-- month start -->
-                <label class="item hairline">
-                    <select dir="rtl">
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="" selected>5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                        <option value="">10</option>
-                        <option value="">11</option>
-                        <option value="">12</option>
-                    </select>
-                    <p>月</p>
-                    <i class="icon-arrow-down"></i>
-                </label>
-                <!-- month over -->
-                <!-- day start -->
-                <label class="item hairline">
-                    <select dir="rtl">
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                        <option value="">10</option>
-                        <option value="">11</option>
-                        <option value="">12</option>
-                        <option value="">13</option>
-                        <option value="">14</option>
-                        <option value="">15</option>
-                        <option value="">16</option>
-                        <option value="">17</option>
-                        <option value="">18</option>
-                        <option value="">19</option>
-                        <option value="">20</option>
-                        <option value="">21</option>
-                        <option value="">22</option>
-                        <option value="" selected>23</option>
-                        <option value="">24</option>
-                        <option value="">25</option>
-                        <option value="">26</option>
-                        <option value="">27</option>
-                        <option value="">28</option>
-                        <option value="">29</option>
-                        <option value="">30</option>
-                        <option value="">31</option>
-                    </select>
-                    <p>日</p>
-                    <i class="icon-arrow-down"></i>
-                </label>
-                <!-- day over -->
-            </div>
+            <label class="section-date">
+                <p class="section-date-title">预约日期</p>
+                <input class="mobiscroll-date" type="text" id="mobiscroll-date">
+                <i class="icon-arrow-down"></i>
+            </label>
             <!-- date over -->
             <!-- room start -->
             <div class="section-room">
@@ -133,7 +67,7 @@
                             <p>9:30</p>
                         </label>
                         <label class="checkbox-item">
-                            <input type="checkbox"class="checkbox checked-last" checked>
+                            <input type="checkbox" class="checkbox checked-last" checked>
                             <span class="checkbox-replace"></span>
                             <p>10:00</p>
                         </label>
@@ -157,7 +91,7 @@
                             <p>11:30</p>
                         </label>
                         <label class="checkbox-item">
-                            <input type="checkbox"class="checkbox">
+                            <input type="checkbox" class="checkbox">
                             <span class="checkbox-replace"></span>
                             <p>12:00</p>
                         </label>
@@ -181,7 +115,7 @@
                             <p>13:30</p>
                         </label>
                         <label class="checkbox-item">
-                            <input type="checkbox"class="checkbox disabled-transit" disabled>
+                            <input type="checkbox" class="checkbox disabled-transit" disabled>
                             <span class="checkbox-replace"></span>
                             <p>14:00</p>
                         </label>
@@ -205,7 +139,7 @@
                     <!-- group start -->
                     <div class="checkbox-time-group">
                         <label class="checkbox-item">
-                            <input type="checkbox"class="checkbox">
+                            <input type="checkbox" class="checkbox">
                             <span class="checkbox-replace"></span>
                             <p>16:00</p>
                         </label>
@@ -279,6 +213,15 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <!-- JavaScript over -->
 
+    <!-- mobiscroll -->
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.core.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.frame.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.scroller.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.util.datetime.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.datetimebase.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.datetime.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/i18n/mobiscroll.i18n.zh.js"></script>
+
     <script type="text/javascript">
         // nprogress
         NProgress.start();
@@ -286,9 +229,30 @@
             NProgress.done();
             $('.nprogress-fade').removeClass('nprogress-out');
         })
+        // mobiscroll
+        var currentYear = (new Date()).getFullYear();
+        var currentMonth = (new Date()).getMonth() + 1;
+        var currentDay = (new Date()).getDate();
+        var now = currentYear + '年' + (currentMonth > 9 ? currentMonth : '0' + currentMonth) + '月' + (currentDay > 9 ? currentDay : '0' + currDay) + '日';
+        $('#mobiscroll-date').val(now);
+        $('#mobiscroll-date').mobiscroll().date({
+            theme: 'ios',
+            mode: 'scroller',
+            display: 'bottom',
+            lang: 'zh',
+            rows: 5,
+            dateFormat: 'yy年mm月dd日',
+            minDate: new Date(),
+            startYear: currentYear,
+            endYear: currentYear + 10,
+            buttons: [
+                'cancel',
+                'set',
+            ]
+        });
         // 修复ios下微信7.0键盘收起后Webview底部异常的问题
         var ua = navigator.userAgent.toLowerCase();
-        if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) && ua.match(/MicroMessenger/i)=="micromessenger") {
+        if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) && ua.match(/MicroMessenger/i) == "micromessenger") {
             $(document).delegate('input, textarea', 'blur', function() {
                 setTimeout(function() {
                     $('html').animate({
