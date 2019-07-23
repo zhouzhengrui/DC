@@ -1550,12 +1550,12 @@ span.label-translucent {
 .content h4,
 .content h5,
 .content h6 {
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
 .content p {
   font-size: 14px;
-  margin: 15px 0;
+  margin-bottom: 15px;
   line-height: 1.8;
 }
 
@@ -1565,7 +1565,7 @@ span.label-translucent {
 }
 
 .content ul {
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
 .content ul li {
@@ -1588,7 +1588,7 @@ span.label-translucent {
 }
 
 .content ol {
-  margin: 15px 0;
+  margin-bottom: 15px;
   padding-left: 24px;
 }
 
@@ -1607,7 +1607,7 @@ span.label-translucent {
 }
 
 .content blockquote {
-  padding: 0 15px;
+  padding: 15px 15px 0;
   border: 1px solid #e5e5e5;
   background-color: #f5f5f5;
 }
@@ -2975,6 +2975,27 @@ span.label-translucent {
   margin-left: 10px;
 }
 
+.section-code {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.section-code p {
+  margin-bottom: 10px;
+}
+
+.section-code .code-image {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #e5e5e5;
+}
+
+.section-code .code-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
 .modal-QRcode {
   display: block;
   margin: 0 auto;
@@ -3355,29 +3376,65 @@ form.checkbox-time p {
 }
 
 .section-user {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   padding: 30px 20px;
-  background-color: #f5f5f5;
+  background-color: #FFFFFF;
   border-bottom: 1px solid #e5e5e5;
 }
 
-.section-user .user-info {
+.section-user .section-user-info {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .section-user .user-info .name {
   margin-right: 10px;
   line-height: 1;
+}
+
+.section-user .section-user-label {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 100px;
+  background-color: #f5f5f5;
+  margin-top: 8px;
+}
+
+.section-user .section-user-label span {
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  padding: 0 15px;
+  border-radius: 100px;
+  margin-right: 12px;
+  color: #02a1ff;
+  border: 1px solid #02a1ff;
+  background-color: #fff;
+}
+
+.section-user .section-user-label p {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+.section-user .section-user-button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .section-user .user-account {
@@ -3521,6 +3578,10 @@ form.checkbox-time p {
   position: absolute;
   right: 20px;
   bottom: 14px;
+}
+
+.list-history .info-button {
+  margin-top: 10px;
 }
 
 .modal-order-info-2 {
