@@ -178,6 +178,15 @@
                         <!-- 余额不足时红字显示 -->
                         <p class="info red">￥100</p>
                     </div>
+                    <div class="item radiocheckbox-switch-item">
+                        <p class="name">开关</p>
+                        <label class="radiocheckbox-switch">
+                            <input class="radiocheckbox" type="checkbox">
+                            <span class="radiocheckbox-replace">
+                                <span class="slipper"></span>
+                            </span>
+                        </label>
+                    </div>
                     <div class="item hairline">
                         <p class="name">会议人数</p>
                         <input type="tel" class="info-input" placeholder="请输入会议人数">
@@ -278,7 +287,7 @@
         var currentYear = (new Date()).getFullYear();
         var currentMonth = (new Date()).getMonth() + 1;
         var currentDay = (new Date()).getDate();
-        var now = currentYear + '年' + (currentMonth > 9 ? currentMonth : '0' + currentMonth) + '月' + (currentDay > 9 ? currentDay : '0' + currDay) + '日';
+        var now = currentYear + '年' + (currentMonth > 9 ? currentMonth : '0' + currentMonth) + '月' + (currentDay > 9 ? currentDay : '0' + currentDay) + '日';
         $('#mobiscroll-date').val(now);
         $('#mobiscroll-date').mobiscroll().date({
             theme: 'ios',
@@ -298,7 +307,7 @@
         // 修复ios下微信7.0键盘收起后Webview底部异常的问题
         var ua = navigator.userAgent.toLowerCase();
         if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) && ua.match(/MicroMessenger/i) == "micromessenger") {
-            $(document).delegate('input, textarea', 'blur', function() {
+            $(document).delegate('input, textarea, select', 'blur', function() {
                 setTimeout(function() {
                     $('html').animate({
                         height: '100.1vh'
