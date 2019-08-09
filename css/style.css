@@ -3704,6 +3704,9 @@ form.checkbox-time p {
   z-index: 1;
   display: block;
   margin: 25px 0 20px;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .input-group-haruki .input-field {
