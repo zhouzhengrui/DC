@@ -3668,6 +3668,27 @@ form.checkbox-time p {
   align-items: center;
 }
 
+.form-box .phone-verification {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 120px;
+  margin-left: 2px;
+  padding-bottom: 11px;
+  border-bottom: 2px solid #999;
+}
+
+.form-box .phone-verification .button {
+  height: 40px;
+  font-size: 14px;
+}
+
 .form-box .login-form-prompt,
 .login-form .login-form-prompt {
   font-size: 12px;
@@ -3675,7 +3696,7 @@ form.checkbox-time p {
 
 .form-box .button-group,
 .login-form .button-group {
-  margin: 30px 20px;
+  margin: 30px 0;
 }
 
 .input-group-haruki {

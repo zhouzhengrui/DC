@@ -30,15 +30,14 @@
             <!-- form start -->
             <form class="form-box">
                 <!-- .input-group-error 验证错误样式 -->
+                <!-- group start -->
                 <div class="input-group">
-                    <!-- group start -->
                     <div class="input-group-haruki input-group-error">
                         <input class="input-field" type="text" id="input-1" />
                         <label class="input-label" for="input-1">
                             <span class="input-label-content">姓名</span>
                         </label>
                     </div>
-                    <!-- group over -->
                     <div class="input-group-radiocheckbox">
                         <label class="radiocheckbox-item">
                             <input type="radio" class="radiocheckbox" name="gender" checked>
@@ -52,11 +51,12 @@
                         </label>
                     </div>
                 </div>
+                <!-- group over -->
                 <!-- group start -->
                 <div class="input-group-haruki">
                     <input class="input-field" type="tel" id="input-2" />
                     <label class="input-label" for="input-2">
-                        <span class="input-label-content">手机号码</span>
+                        <span class="input-label-content">身份证号码</span>
                     </label>
                 </div>
                 <!-- group over -->
@@ -64,8 +64,21 @@
                 <div class="input-group-haruki">
                     <input class="input-field" type="tel" id="input-3" />
                     <label class="input-label" for="input-3">
-                        <span class="input-label-content">身份证号码</span>
+                        <span class="input-label-content">手机号码</span>
                     </label>
+                </div>
+                <!-- group over -->
+                <!-- group start -->
+                <div class="input-group">
+                    <div class="input-group-haruki">
+                        <input class="input-field" type="tel" id="input-4" />
+                        <label class="input-label" for="input-4">
+                            <span class="input-label-content">短信验证码</span>
+                        </label>
+                    </div>
+                    <div class="phone-verification">
+                        <button type="button" class="button button-block waves-effect waves-light" id="sendMessageButton" onClick="sendMessage()">获取验证码</button>
+                    </div>
                 </div>
                 <!-- group over -->
                 <!-- prompt start -->
@@ -97,10 +110,37 @@
     <!-- JavaScript over -->
 
     <script type="text/javascript">
+        var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/; //手机号正则
+        var count = 60; // 间隔函数，1秒执行
+        var InterValObj; // timer变量，控制时间
+        var curCount; // 当前剩余秒数
+        function sendMessage() {
+            curCount = count;
+            var phone = $.trim($('#input-3').val());
+            if (!phoneReg.test(phone)) {
+                alert(" 请输入有效的手机号码");
+                return false;
+            }
+            //设置button效果，开始计时
+            $("#sendMessageButton").attr("disabled", "true");
+            $("#sendMessageButton").html(+curCount + "秒再获取");
+            InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+            //向后台发送处理数据
+        }
+        function SetRemainTime() {
+            if (curCount == 0) {
+                window.clearInterval(InterValObj); //停止计时器
+                $("#sendMessageButton").removeAttr("disabled"); //启用按钮
+                $("#sendMessageButton").html("重新发送");
+            } else {
+                curCount--;
+                $("#sendMessageButton").html(+curCount + "秒再获取");
+            }
+        }
         // 修复ios下微信7.0键盘收起后Webview底部异常的问题
         var ua = navigator.userAgent.toLowerCase();
-        if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) && ua.match(/MicroMessenger/i)=="micromessenger") {
-            $(document).delegate('input, textarea', 'blur', function() {
+        if (navigator.userAgent.match(/(iPhone|iPad|iPod|iOS)/i) && ua.match(/MicroMessenger/i) == "micromessenger") {
+            $(document).delegate('input, textarea, select', 'blur', function() {
                 setTimeout(function() {
                     $('html').animate({
                         height: '100.1vh'
@@ -121,9 +161,11 @@
                 inputEl.addEventListener('focus', onInputFocus);
                 inputEl.addEventListener('blur', onInputBlur);
             });
+
             function onInputFocus(ev) {
                 classie.add(ev.target.parentNode, 'input-filled-parent');
             }
+
             function onInputBlur(ev) {
                 if (ev.target.value.trim() === '') {
                     classie.remove(ev.target.parentNode, 'input-filled-parent');
